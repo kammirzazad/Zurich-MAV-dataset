@@ -1,0 +1,6 @@
+pottedplant 1495 402 1592 502
+pottedplant 914 338 1031 425
+pottedplant 1007 602 1108 684
+pottedplant 1511 603 1581 689
+pottedplant 996 341 1123 434
+pottedplant 899 607 985 681

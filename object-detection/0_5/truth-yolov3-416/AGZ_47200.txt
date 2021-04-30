@@ -1,0 +1,4 @@
+pottedplant 501 394 581 446
+pottedplant 1055 7 1194 58
+car 55 699 276 846
+bicycle 840 795 991 891

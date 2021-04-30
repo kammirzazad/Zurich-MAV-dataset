@@ -1,0 +1,2 @@
+pottedplant 907 265 1028 350
+pottedplant 1423 350 1497 427

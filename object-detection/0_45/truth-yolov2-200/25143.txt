@@ -1,0 +1,3 @@
+pottedplant 1509 586 1592 679
+pottedplant 923 277 1029 347
+car 4 662 95 732

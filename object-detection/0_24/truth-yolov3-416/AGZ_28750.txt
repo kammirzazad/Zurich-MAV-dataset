@@ -1,0 +1,2 @@
+pottedplant 532 803 749 1046
+fire_hydrant 485 967 564 1079

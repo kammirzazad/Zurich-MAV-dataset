@@ -1,0 +1,4 @@
+pottedplant 1000 592 1114 678
+pottedplant 1513 592 1588 681
+pottedplant 887 304 1096 403
+car 0 661 101 734

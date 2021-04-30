@@ -1,0 +1,2 @@
+parking_meter 1375 894 1558 1047
+stop_sign 469 820 521 916

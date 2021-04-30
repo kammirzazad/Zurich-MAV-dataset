@@ -1,0 +1,3 @@
+pottedplant 599 728 684 797
+pottedplant 490 789 551 845
+person 570 1018 653 1079

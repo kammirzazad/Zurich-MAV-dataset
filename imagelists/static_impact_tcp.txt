@@ -1,0 +1,335 @@
+packet widths for g0 input, tile:(0,0), range:[11,18], best:11
+there were 5 zero samples
+packet widths for g0 output, tile:(0,0), range:[4,18], best:16
+packet widths for g0 input, tile:(1,0), range:[11,18], best:11
+there were 5 zero samples
+packet widths for g0 output, tile:(1,0), range:[4,18], best:16
+packet widths for g0 input, tile:(2,0), range:[11,18], best:11
+there were 5 zero samples
+packet widths for g0 output, tile:(2,0), range:[4,18], best:16
+packet widths for g0 input, tile:(0,1), range:[11,18], best:11
+there were 5 zero samples
+packet widths for g0 output, tile:(0,1), range:[4,18], best:15
+packet widths for g0 input, tile:(1,1), range:[11,18], best:11
+there were 5 zero samples
+packet widths for g0 output, tile:(1,1), range:[4,18], best:15
+packet widths for g0 input, tile:(2,1), range:[11,18], best:11
+there were 5 zero samples
+packet widths for g0 output, tile:(2,1), range:[4,18], best:15
+packet widths for g1 input, tile:(0,0), range:[4,18], best:16
+packet widths for g1 output, tile:(0,0), range:[3,18], best:4
+packet widths for g1 input, tile:(1,0), range:[4,18], best:16
+packet widths for g1 output, tile:(1,0), range:[3,18], best:4
+packet widths for g1 input, tile:(2,0), range:[4,18], best:16
+packet widths for g1 output, tile:(2,0), range:[3,18], best:4
+packet widths for g1 input, tile:(0,1), range:[4,18], best:15
+packet widths for g1 output, tile:(0,1), range:[3,18], best:15
+packet widths for g1 input, tile:(1,1), range:[4,18], best:15
+packet widths for g1 output, tile:(1,1), range:[3,18], best:15
+packet widths for g1 input, tile:(2,1), range:[4,18], best:15
+packet widths for g1 output, tile:(2,1), range:[3,18], best:15
+packet widths for g2 input, tile:(0,0), range:[3,18], best:4
+packet widths for g2 output, tile:(0,0), range:[2,18], best:4
+packet widths for g2 input, tile:(1,0), range:[3,18], best:4
+packet widths for g2 output, tile:(1,0), range:[2,18], best:2
+packet widths for g2 input, tile:(2,0), range:[3,18], best:4
+packet widths for g2 output, tile:(2,0), range:[2,18], best:2
+packet widths for g2 input, tile:(0,1), range:[3,18], best:15
+packet widths for g2 output, tile:(0,1), range:[2,18], best:15
+packet widths for g2 input, tile:(1,1), range:[3,18], best:15
+packet widths for g2 output, tile:(1,1), range:[2,18], best:15
+packet widths for g2 input, tile:(2,1), range:[3,18], best:15
+packet widths for g2 output, tile:(2,1), range:[2,18], best:15
+packet widths for g3 input, tile:(0,0), range:[2,18], best:4
+packet widths for g3 output, tile:(0,0), range:[3,18], best:4
+packet widths for g3 input, tile:(1,0), range:[2,18], best:2
+packet widths for g3 output, tile:(1,0), range:[3,18], best:4
+packet widths for g3 input, tile:(2,0), range:[2,18], best:2
+packet widths for g3 output, tile:(2,0), range:[3,18], best:4
+packet widths for g3 input, tile:(0,1), range:[2,18], best:15
+packet widths for g3 output, tile:(0,1), range:[3,18], best:15
+packet widths for g3 input, tile:(1,1), range:[2,18], best:15
+packet widths for g3 output, tile:(1,1), range:[3,18], best:15
+packet widths for g3 input, tile:(2,1), range:[2,18], best:15
+packet widths for g3 output, tile:(2,1), range:[3,18], best:15
+packet widths for g4 input, tile:(0,0), range:[3,18], best:4
+packet widths for g4 output, tile:(0,0), range:[2,18], best:2
+packet widths for g4 input, tile:(1,0), range:[3,18], best:4
+packet widths for g4 output, tile:(1,0), range:[2,18], best:2
+packet widths for g4 input, tile:(2,0), range:[3,18], best:4
+packet widths for g4 output, tile:(2,0), range:[2,18], best:2
+packet widths for g4 input, tile:(0,1), range:[3,18], best:15
+packet widths for g4 output, tile:(0,1), range:[2,18], best:12
+packet widths for g4 input, tile:(1,1), range:[3,18], best:17
+packet widths for g4 output, tile:(1,1), range:[2,18], best:12
+packet widths for g4 input, tile:(2,1), range:[3,18], best:15
+packet widths for g4 output, tile:(2,1), range:[2,18], best:18
+packet widths for g5 input, tile:(0,0), range:[2,18], best:2
+packet widths for g5 output, tile:(0,0), range:[2,18], best:2
+packet widths for g5 input, tile:(1,0), range:[2,18], best:2
+packet widths for g5 output, tile:(1,0), range:[2,18], best:2
+packet widths for g5 input, tile:(2,0), range:[2,18], best:2
+packet widths for g5 output, tile:(2,0), range:[2,18], best:2
+packet widths for g5 input, tile:(0,1), range:[2,18], best:12
+packet widths for g5 output, tile:(0,1), range:[2,18], best:12
+packet widths for g5 input, tile:(1,1), range:[2,18], best:18
+packet widths for g5 output, tile:(1,1), range:[2,18], best:12
+packet widths for g5 input, tile:(2,1), range:[2,18], best:18
+packet widths for g5 output, tile:(2,1), range:[2,18], best:18
+packet widths for g6 input, tile:(0,0), range:[2,18], best:2
+packet widths for g6 output, tile:(0,0), range:[2,18], best:2
+packet widths for g6 input, tile:(1,0), range:[2,18], best:2
+packet widths for g6 output, tile:(1,0), range:[2,18], best:2
+packet widths for g6 input, tile:(2,0), range:[2,18], best:2
+packet widths for g6 output, tile:(2,0), range:[2,18], best:2
+packet widths for g6 input, tile:(0,1), range:[2,18], best:12
+packet widths for g6 output, tile:(0,1), range:[2,18], best:12
+packet widths for g6 input, tile:(1,1), range:[2,18], best:12
+packet widths for g6 output, tile:(1,1), range:[2,18], best:12
+packet widths for g6 input, tile:(2,1), range:[2,18], best:18
+packet widths for g6 output, tile:(2,1), range:[2,18], best:18
+packet widths for g7 input, tile:(0,0), range:[2,18], best:3
+packet widths for g7 output, tile:(0,0), range:[2,18], best:2
+packet widths for g7 input, tile:(1,0), range:[2,18], best:3
+packet widths for g7 output, tile:(1,0), range:[2,18], best:2
+packet widths for g7 input, tile:(2,0), range:[2,18], best:3
+packet widths for g7 output, tile:(2,0), range:[2,18], best:2
+packet widths for g7 input, tile:(0,1), range:[2,18], best:12
+packet widths for g7 output, tile:(0,1), range:[2,18], best:18
+packet widths for g7 input, tile:(1,1), range:[2,18], best:18
+packet widths for g7 output, tile:(1,1), range:[2,18], best:18
+packet widths for g7 input, tile:(2,1), range:[2,18], best:18
+packet widths for g7 output, tile:(2,1), range:[2,18], best:18
+packet widths for g8 input, tile:(0,0), range:[2,18], best:2
+packet widths for g8 output, tile:(0,0), range:[1,18], best:2
+packet widths for g8 input, tile:(1,0), range:[2,18], best:2
+packet widths for g8 output, tile:(1,0), range:[1,18], best:2
+packet widths for g8 input, tile:(2,0), range:[2,18], best:2
+packet widths for g8 output, tile:(2,0), range:[1,18], best:2
+packet widths for g8 input, tile:(0,1), range:[2,18], best:18
+packet widths for g8 output, tile:(0,1), range:[1,18], best:18
+packet widths for g8 input, tile:(1,1), range:[2,18], best:14
+packet widths for g8 output, tile:(1,1), range:[1,18], best:18
+packet widths for g8 input, tile:(2,1), range:[2,18], best:18
+packet widths for g8 output, tile:(2,1), range:[1,18], best:18
+packet widths for g9 input, tile:(0,0), range:[1,18], best:2
+packet widths for g9 output, tile:(0,0), range:[2,18], best:2
+packet widths for g9 input, tile:(1,0), range:[1,18], best:2
+packet widths for g9 output, tile:(1,0), range:[2,18], best:2
+packet widths for g9 input, tile:(2,0), range:[1,18], best:2
+packet widths for g9 output, tile:(2,0), range:[2,18], best:2
+packet widths for g9 input, tile:(0,1), range:[1,18], best:18
+packet widths for g9 output, tile:(0,1), range:[2,18], best:18
+packet widths for g9 input, tile:(1,1), range:[1,18], best:18
+packet widths for g9 output, tile:(1,1), range:[2,18], best:18
+packet widths for g9 input, tile:(2,1), range:[1,18], best:18
+packet widths for g9 output, tile:(2,1), range:[2,18], best:18
+packet widths for g10 input, tile:(0,0), range:[2,18], best:2
+packet widths for g10 output, tile:(0,0), range:[1,18], best:2
+packet widths for g10 input, tile:(1,0), range:[2,18], best:2
+packet widths for g10 output, tile:(1,0), range:[1,18], best:2
+packet widths for g10 input, tile:(2,0), range:[2,18], best:2
+packet widths for g10 output, tile:(2,0), range:[1,18], best:2
+packet widths for g10 input, tile:(0,1), range:[2,18], best:18
+packet widths for g10 output, tile:(0,1), range:[1,18], best:18
+packet widths for g10 input, tile:(1,1), range:[2,18], best:18
+packet widths for g10 output, tile:(1,1), range:[1,18], best:18
+packet widths for g10 input, tile:(2,1), range:[2,18], best:18
+packet widths for g10 output, tile:(2,1), range:[1,18], best:18
+packet widths for g11 input, tile:(0,0), range:[1,18], best:2
+packet widths for g11 output, tile:(0,0), range:[2,18], best:2
+packet widths for g11 input, tile:(1,0), range:[1,18], best:2
+packet widths for g11 output, tile:(1,0), range:[2,18], best:2
+packet widths for g11 input, tile:(2,0), range:[1,18], best:2
+packet widths for g11 output, tile:(2,0), range:[2,18], best:2
+packet widths for g11 input, tile:(0,1), range:[1,18], best:18
+packet widths for g11 output, tile:(0,1), range:[2,18], best:18
+packet widths for g11 input, tile:(1,1), range:[1,18], best:18
+packet widths for g11 output, tile:(1,1), range:[2,18], best:18
+packet widths for g11 input, tile:(2,1), range:[1,18], best:18
+packet widths for g11 output, tile:(2,1), range:[2,18], best:18
+packet widths for g12 input, tile:(0,0), range:[2,18], best:2
+packet widths for g12 output, tile:(0,0), range:[1,18], best:11
+packet widths for g12 input, tile:(1,0), range:[2,18], best:2
+packet widths for g12 output, tile:(1,0), range:[1,18], best:2
+packet widths for g12 input, tile:(2,0), range:[2,18], best:2
+packet widths for g12 output, tile:(2,0), range:[1,18], best:2
+packet widths for g12 input, tile:(0,1), range:[2,18], best:18
+packet widths for g12 output, tile:(0,1), range:[1,18], best:18
+packet widths for g12 input, tile:(1,1), range:[2,18], best:18
+packet widths for g12 output, tile:(1,1), range:[1,18], best:18
+packet widths for g12 input, tile:(2,1), range:[2,18], best:18
+packet widths for g12 output, tile:(2,1), range:[1,18], best:18
+packet widths for g13 input, tile:(0,0), range:[1,18], best:2
+packet widths for g13 output, tile:(0,0), range:[1,18], best:5
+packet widths for g13 input, tile:(1,0), range:[1,18], best:2
+packet widths for g13 output, tile:(1,0), range:[1,18], best:5
+packet widths for g13 input, tile:(2,0), range:[1,18], best:2
+packet widths for g13 output, tile:(2,0), range:[1,18], best:6
+packet widths for g13 input, tile:(0,1), range:[1,18], best:10
+packet widths for g13 output, tile:(0,1), range:[1,18], best:9
+packet widths for g13 input, tile:(1,1), range:[1,18], best:10
+packet widths for g13 output, tile:(1,1), range:[1,18], best:9
+packet widths for g13 input, tile:(2,1), range:[1,18], best:10
+packet widths for g13 output, tile:(2,1), range:[1,18], best:9
+packet widths for g14 input, tile:(0,0), range:[1,18], best:5
+packet widths for g14 output, tile:(0,0), range:[1,18], best:2
+packet widths for g14 input, tile:(1,0), range:[1,18], best:5
+packet widths for g14 output, tile:(1,0), range:[1,18], best:2
+packet widths for g14 input, tile:(2,0), range:[1,18], best:6
+packet widths for g14 output, tile:(2,0), range:[1,18], best:2
+packet widths for g14 input, tile:(0,1), range:[1,18], best:9
+packet widths for g14 output, tile:(0,1), range:[1,18], best:9
+packet widths for g14 input, tile:(1,1), range:[1,18], best:9
+packet widths for g14 output, tile:(1,1), range:[1,18], best:9
+packet widths for g14 input, tile:(2,1), range:[1,18], best:9
+packet widths for g14 output, tile:(2,1), range:[1,18], best:9
+packet widths for g15 input, tile:(0,0), range:[1,18], best:2
+packet widths for g15 output, tile:(0,0), range:[1,18], best:5
+packet widths for g15 input, tile:(1,0), range:[1,18], best:2
+packet widths for g15 output, tile:(1,0), range:[1,18], best:5
+packet widths for g15 input, tile:(2,0), range:[1,18], best:2
+packet widths for g15 output, tile:(2,0), range:[1,18], best:6
+packet widths for g15 input, tile:(0,1), range:[1,18], best:10
+packet widths for g15 output, tile:(0,1), range:[1,18], best:9
+packet widths for g15 input, tile:(1,1), range:[1,18], best:10
+packet widths for g15 output, tile:(1,1), range:[1,18], best:9
+packet widths for g15 input, tile:(2,1), range:[1,18], best:10
+packet widths for g15 output, tile:(2,1), range:[1,18], best:9
+packet widths for g16 input, tile:(0,0), range:[1,18], best:5
+packet widths for g16 output, tile:(0,0), range:[1,18], best:5
+packet widths for g16 input, tile:(1,0), range:[1,18], best:5
+packet widths for g16 output, tile:(1,0), range:[1,18], best:5
+packet widths for g16 input, tile:(2,0), range:[1,18], best:6
+packet widths for g16 output, tile:(2,0), range:[1,18], best:6
+packet widths for g16 input, tile:(0,1), range:[1,18], best:9
+packet widths for g16 output, tile:(0,1), range:[1,18], best:9
+packet widths for g16 input, tile:(1,1), range:[1,18], best:9
+packet widths for g16 output, tile:(1,1), range:[1,18], best:9
+packet widths for g16 input, tile:(2,1), range:[1,18], best:9
+packet widths for g16 output, tile:(2,1), range:[1,18], best:9
+packet widths for g17 input, tile:(0,0), range:[1,18], best:2
+packet widths for g17 output, tile:(0,0), range:[1,18], best:5
+packet widths for g17 input, tile:(1,0), range:[1,18], best:2
+packet widths for g17 output, tile:(1,0), range:[1,18], best:5
+packet widths for g17 input, tile:(2,0), range:[1,18], best:7
+packet widths for g17 output, tile:(2,0), range:[1,18], best:6
+packet widths for g17 input, tile:(0,1), range:[1,18], best:10
+packet widths for g17 output, tile:(0,1), range:[1,18], best:9
+packet widths for g17 input, tile:(1,1), range:[1,18], best:10
+packet widths for g17 output, tile:(1,1), range:[1,18], best:9
+packet widths for g17 input, tile:(2,1), range:[1,18], best:10
+packet widths for g17 output, tile:(2,1), range:[1,18], best:9
+packet widths for g18 input, tile:(0,0), range:[1,18], best:6
+packet widths for g18 output, tile:(0,0), range:[1,18], best:5
+packet widths for g18 input, tile:(1,0), range:[1,18], best:7
+packet widths for g18 output, tile:(1,0), range:[1,18], best:5
+packet widths for g18 input, tile:(2,0), range:[1,18], best:7
+packet widths for g18 output, tile:(2,0), range:[1,18], best:6
+packet widths for g18 input, tile:(0,1), range:[1,18], best:10
+packet widths for g18 output, tile:(0,1), range:[1,18], best:9
+packet widths for g18 input, tile:(1,1), range:[1,18], best:10
+packet widths for g18 output, tile:(1,1), range:[1,18], best:9
+packet widths for g18 input, tile:(2,1), range:[1,18], best:10
+packet widths for g18 output, tile:(2,1), range:[1,18], best:9
+packet widths for g19 input, tile:(0,0), range:[1,18], best:6
+packet widths for g19 output, tile:(0,0), range:[1,18], best:5
+packet widths for g19 input, tile:(1,0), range:[1,18], best:7
+packet widths for g19 output, tile:(1,0), range:[1,18], best:5
+packet widths for g19 input, tile:(2,0), range:[1,18], best:7
+packet widths for g19 output, tile:(2,0), range:[1,18], best:6
+packet widths for g19 input, tile:(0,1), range:[1,18], best:10
+packet widths for g19 output, tile:(0,1), range:[1,18], best:9
+packet widths for g19 input, tile:(1,1), range:[1,18], best:10
+packet widths for g19 output, tile:(1,1), range:[1,18], best:9
+packet widths for g19 input, tile:(2,1), range:[1,18], best:10
+packet widths for g19 output, tile:(2,1), range:[1,18], best:9
+packet widths for g20 input, tile:(0,0), range:[1,18], best:11
+packet widths for g20 output, tile:(0,0), range:[3,18], best:4
+packet widths for g20 input, tile:(1,0), range:[1,18], best:12
+packet widths for g20 output, tile:(1,0), range:[3,18], best:4
+packet widths for g20 input, tile:(2,0), range:[1,18], best:12
+packet widths for g20 output, tile:(2,0), range:[3,18], best:4
+packet widths for g20 input, tile:(0,1), range:[1,18], best:18
+packet widths for g20 output, tile:(0,1), range:[3,18], best:18
+packet widths for g20 input, tile:(1,1), range:[1,18], best:18
+packet widths for g20 output, tile:(1,1), range:[3,18], best:18
+packet widths for g20 input, tile:(2,1), range:[1,18], best:18
+packet widths for g20 output, tile:(2,1), range:[3,18], best:18
+packet widths for g21 input, tile:(0,0), range:[1,18], best:6
+packet widths for g21 output, tile:(0,0), range:[1,18], best:1
+packet widths for g21 input, tile:(1,0), range:[1,18], best:7
+packet widths for g21 output, tile:(1,0), range:[1,18], best:1
+packet widths for g21 input, tile:(2,0), range:[1,18], best:7
+packet widths for g21 output, tile:(2,0), range:[1,18], best:1
+packet widths for g21 input, tile:(0,1), range:[1,18], best:10
+packet widths for g21 output, tile:(0,1), range:[1,18], best:9
+packet widths for g21 input, tile:(1,1), range:[1,18], best:10
+packet widths for g21 output, tile:(1,1), range:[1,18], best:9
+packet widths for g21 input, tile:(2,1), range:[1,18], best:10
+packet widths for g21 output, tile:(2,1), range:[1,18], best:9
+packet widths for g22 input, tile:(0,0), range:[1,18], best:1
+packet widths for g22 output, tile:(0,0), range:[1,18], best:3
+there were 6 zero samples
+packet widths for g22 input, tile:(1,0), range:[1,18], best:1
+packet widths for g22 output, tile:(1,0), range:[1,18], best:3
+there were 6 zero samples
+packet widths for g22 input, tile:(2,0), range:[1,18], best:1
+packet widths for g22 output, tile:(2,0), range:[1,18], best:3
+there were 6 zero samples
+packet widths for g22 input, tile:(0,1), range:[1,18], best:9
+packet widths for g22 output, tile:(0,1), range:[1,18], best:3
+there were 6 zero samples
+packet widths for g22 input, tile:(1,1), range:[1,18], best:9
+packet widths for g22 output, tile:(1,1), range:[1,18], best:3
+there were 6 zero samples
+packet widths for g22 input, tile:(2,1), range:[1,18], best:9
+packet widths for g22 output, tile:(2,1), range:[1,18], best:3
+there were 6 zero samples
+mapping of g0: (0,0):5 (1,0):4 (2,0):3 (0,1):2 (1,1):1 (2,1):0 
+mapping of g1: (0,0):5 (1,0):4 (2,0):3 (0,1):2 (1,1):1 (2,1):0 
+mapping of g2: (0,0):5 (1,0):4 (2,0):3 (0,1):2 (1,1):1 (2,1):0 
+mapping of g3: (0,0):5 (1,0):4 (2,0):3 (0,1):2 (1,1):1 (2,1):0 
+mapping of g4: (0,0):5 (1,0):4 (2,0):3 (0,1):1 (1,1):2 (2,1):0 
+mapping of g5: (0,0):5 (1,0):4 (2,0):3 (0,1):1 (1,1):2 (2,1):0 
+mapping of g6: (0,0):5 (1,0):4 (2,0):3 (0,1):1 (1,1):2 (2,1):0 
+mapping of g7: (0,0):5 (1,0):4 (2,0):3 (0,1):2 (1,1):1 (2,1):0 
+mapping of g8: (0,0):5 (1,0):4 (2,0):3 (0,1):2 (1,1):1 (2,1):0 
+mapping of g9: (0,0):5 (1,0):4 (2,0):3 (0,1):2 (1,1):1 (2,1):0 
+mapping of g10: (0,0):5 (1,0):4 (2,0):3 (0,1):2 (1,1):1 (2,1):0 
+mapping of g11: (0,0):5 (1,0):4 (2,0):3 (0,1):2 (1,1):1 (2,1):0 
+mapping of g12: (0,0):5 (1,0):4 (2,0):3 (0,1):1 (1,1):2 (2,1):0 
+mapping of g13: (0,0):5 (1,0):4 (2,0):3 (0,1):2 (1,1):1 (2,1):0 
+mapping of g14: (0,0):5 (1,0):4 (2,0):3 (0,1):2 (1,1):1 (2,1):0 
+mapping of g15: (0,0):5 (1,0):4 (2,0):3 (0,1):2 (1,1):1 (2,1):0 
+mapping of g16: (0,0):5 (1,0):4 (2,0):3 (0,1):2 (1,1):1 (2,1):0 
+mapping of g17: (0,0):5 (1,0):4 (2,0):3 (0,1):2 (1,1):1 (2,1):0 
+mapping of g18: (0,0):5 (1,0):4 (2,0):3 (0,1):2 (1,1):1 (2,1):0 
+mapping of g19: (0,0):5 (1,0):4 (2,0):3 (0,1):1 (1,1):2 (2,1):0 
+mapping of g20: (0,0):5 (1,0):3 (2,0):4 (0,1):1 (1,1):2 (2,1):0 
+mapping of g21: (0,0):5 (1,0):4 (2,0):3 (0,1):1 (1,1):2 (2,1):0 
+mapping of g22: (0,0):4 (1,0):5 (2,0):3 (0,1):1 (1,1):2 (2,1):0 
+impacts in/out (0,0) (1,0) (2,0) (0,1) (1,1) (2,1) :
+g0: A=227.791, k=6.16314/A=0.0261175, k=14.5093 A=249.503, k=6.19757/A=0.0217806, k=14.7685 A=349.621, k=6.16107/A=0.0450856, k=13.9487 A=315.647, k=6.45513/A=0.0230542, k=15.136 A=363.851, k=6.34808/A=0.0150454, k=15.6607 A=400.979, k=6.55643/A=0.0259066, k=15.2351 
+g1: A=0.0260583, k=14.5397/A=0.0288274, k=13.9929 A=0.0273951, k=14.5541/A=0.0284468, k=13.9635 A=0.048248, k=13.9054/A=0.0418273, k=13.6874 A=0.0288863, k=14.8243/A=0.025235, k=14.6351 A=0.0224856, k=15.1304/A=0.0200477, k=14.917 A=0.0330274, k=14.9093/A=0.0487172, k=14.0077 
+g2: A=0.0415499, k=13.5748/A=0.134453, k=12.1472 A=0.0236252, k=14.3333/A=0.255107, k=11.1376 A=0.050821, k=13.4967/A=0.416947, k=10.6802 A=0.0454714, k=13.9085/A=0.0186145, k=15.1551 A=0.0393177, k=14.1216/A=0.0145215, k=15.4462 A=0.0827264, k=13.3452/A=0.0367518, k=14.4669 
+g3: A=0.134453, k=12.1472/A=0.0755875, k=11.9833 A=0.255107, k=11.1376/A=0.0726136, k=11.9408 A=0.416947, k=10.6802/A=0.105331, k=11.7074 A=0.0186145, k=15.1551/A=0.0236184, k=14.1597 A=0.0145215, k=15.4462/A=0.019812, k=14.3407 A=0.0367518, k=14.4669/A=0.0487301, k=13.4162 
+g4: A=0.0994557, k=11.7044/A=0.201206, k=10.6448 A=0.0907434, k=11.7391/A=0.160806, k=10.8354 A=0.115969, k=11.5999/A=0.282579, k=10.3595 A=0.0440851, k=13.3732/A=0.0210375, k=13.5061 A=0.0155801, k=14.784/A=0.0164322, k=13.6449 A=0.0826099, k=12.8091/A=0.0974047, k=12.2641 
+g5: A=0.299887, k=10.3122/A=0.0154691, k=14.1861 A=0.18755, k=10.9544/A=0.0137945, k=14.2408 A=0.330749, k=10.3475/A=0.0230757, k=13.8365 A=0.0587613, k=12.4425/A=0.0183578, k=13.9668 A=0.051112, k=13.297/A=0.0146217, k=14.0682 A=0.129617, k=12.1903/A=0.0888172, k=12.6186 
+g6: A=0.0154691, k=14.1861/A=0.245377, k=10.2983 A=0.0137945, k=14.2408/A=0.192493, k=10.5165 A=0.0230757, k=13.8365/A=0.344598, k=10.019 A=0.0183578, k=13.9668/A=0.0215458, k=13.3621 A=0.0146217, k=14.0682/A=0.0166679, k=13.4871 A=0.0888172, k=12.6186/A=0.107133, k=11.9467 
+g7: A=0.192127, k=10.6727/A=0.022938, k=13.0192 A=0.166083, k=10.9408/A=0.0152744, k=13.5383 A=0.330563, k=10.1787/A=0.025487, k=13.071 A=0.0336278, k=12.9605/A=0.0295106, k=12.76 A=0.0643227, k=12.821/A=0.00998568, k=14.1377 A=0.147108, k=11.8204/A=0.0317752, k=13.0141 
+g8: A=0.0173932, k=13.5902/A=0.128803, k=11.224 A=0.0175686, k=13.6829/A=0.0942365, k=11.6763 A=0.0287828, k=13.1564/A=0.133525, k=11.3911 A=0.0740838, k=11.8197/A=0.0258877, k=12.9248 A=0.016479, k=13.1187/A=0.0124363, k=13.818 A=0.0748688, k=12.1444/A=0.0324887, k=12.9518 
+g9: A=0.128803, k=11.224/A=0.0489741, k=11.8407 A=0.0942364, k=11.6763/A=0.0368789, k=12.2543 A=0.133525, k=11.3911/A=0.0567734, k=11.8231 A=0.0258877, k=12.9248/A=0.0263325, k=12.5598 A=0.0124363, k=13.818/A=0.0107277, k=13.6712 A=0.0324887, k=12.9518/A=0.0285823, k=12.7783 
+g10: A=0.0394147, k=12.3179/A=0.169332, k=10.9458 A=0.0396284, k=12.4814/A=0.128195, k=11.421 A=0.0615757, k=11.9638/A=0.197704, k=10.9306 A=0.0770859, k=11.4084/A=0.0270331, k=12.9039 A=0.035929, k=12.4695/A=0.0121538, k=13.8878 A=0.0975925, k=11.3824/A=0.0334381, k=12.9471 
+g11: A=0.169332, k=10.9458/A=0.045471, k=11.9637 A=0.128195, k=11.421/A=0.0422345, k=12.1223 A=0.197704, k=10.9306/A=0.0455261, k=12.2072 A=0.0270331, k=12.9039/A=0.0312516, k=12.3489 A=0.0121538, k=13.8878/A=0.0131955, k=13.4354 A=0.0334381, k=12.9471/A=0.0390907, k=12.3929 
+g12: A=0.039607, k=12.3089/A=0.500354, k=8.11987 A=0.044259, k=12.3772/A=0.104326, k=11.0047 A=0.0572801, k=12.1107/A=0.154432, k=10.6878 A=0.098105, k=11.1337/A=0.010512, k=13.8655 A=0.0448854, k=12.243/A=0.00387891, k=14.9958 A=0.122419, k=11.1446/A=0.0135106, k=13.7811 
+g13: A=0.210829, k=10.3342/A=2.34166, k=6.35422 A=0.290043, k=10.1481/A=2.12158, k=6.52395 A=0.331074, k=10.0961/A=2.33544, k=6.7343 A=0.117329, k=10.7796/A=0.189089, k=10.1007 A=0.0547431, k=11.8944/A=0.0794874, k=11.1955 A=0.168884, k=10.6422/A=0.224316, k=10.2647 
+g14: A=2.34166, k=6.35422/A=0.332538, k=8.98871 A=2.12158, k=6.52395/A=0.609616, k=8.15377 A=2.33544, k=6.7343/A=0.459584, k=8.85752 A=0.189089, k=10.1007/A=0.169304, k=9.7277 A=0.0794874, k=11.1955/A=0.0959348, k=10.4539 A=0.224316, k=10.2647/A=0.234428, k=9.73592 
+g15: A=0.367069, k=9.19256/A=1.85058, k=6.27809 A=0.730275, k=8.48857/A=1.67036, k=6.44885 A=0.669154, k=8.74455/A=1.64137, k=6.82284 A=0.146448, k=10.2319/A=0.281083, k=9.36477 A=0.093057, k=11.0264/A=0.143006, k=10.2374 A=0.187743, k=10.2998/A=0.301119, k=9.67766 
+g16: A=1.85058, k=6.27809/A=1.20942, k=6.20734 A=1.67036, k=6.44885/A=1.20154, k=6.27954 A=1.64137, k=6.82284/A=1.18768, k=6.43784 A=0.281083, k=9.36477/A=0.210582, k=9.08992 A=0.143006, k=10.2374/A=0.158822, k=9.42536 A=0.301119, k=9.67766/A=0.294598, k=9.01818 
+g17: A=0.339521, k=8.7471/A=1.38755, k=6.15658 A=0.517783, k=8.54193/A=1.31001, k=6.30453 A=1.02847, k=7.23358/A=0.859446, k=7.01591 A=0.186946, k=9.54235/A=0.223953, k=9.32236 A=0.152127, k=10.046/A=0.178749, k=9.71249 A=0.242994, k=9.55513/A=0.343318, k=9.16911 
+g18: A=1.43478, k=6.65265/A=1.23994, k=6.10308 A=1.74451, k=6.83011/A=1.19592, k=6.22643 A=0.915817, k=7.51482/A=0.839098, k=6.84876 A=0.139755, k=10.3532/A=0.194544, k=9.43601 A=0.142887, k=10.6213/A=0.23885, k=9.17348 A=0.248559, k=9.91163/A=0.321139, k=9.15647 
+g19: A=1.30671, k=6.60274/A=0.889522, k=6.22311 A=1.35636, k=6.99008/A=0.843732, k=6.35377 A=0.910959, k=7.35636/A=0.514648, k=7.08553 A=0.198194, k=9.69348/A=0.139098, k=9.66843 A=0.246595, k=9.64846/A=0.167609, k=9.45563 A=0.263427, k=9.68514/A=0.23928, k=9.29613 
+g20: A=0.07873, k=8.33399/A=0.0527699, k=8.48405 A=0.0869645, k=8.25986/A=0.0229642, k=9.61054 A=0.0920456, k=8.28844/A=0.0434119, k=8.71567 A=0.00302771, k=13.5903/A=0.00190194, k=13.962 A=0.00142372, k=14.1846/A=0.0015611, k=13.9596 A=0.00394772, k=13.4004/A=0.00370391, k=13.279 
+g21: A=0.811048, k=7.38174/A=8.88961e-08, k=26.6912 A=0.944835, k=7.54435/A=2.4789e-08, k=27.5954 A=0.539833, k=8.13275/A=1.75386e-10, k=36.3479 A=0.0752408, k=11.2163/A=9.56131e-12, k=38.9201 A=0.0825415, k=11.3436/A=8.70438e-12, k=38.6507 A=0.0952252, k=11.2481/A=1.77677e-08, k=29.5019 
+g22: A=8.88961e-08, k=26.6912/A=2.29341e-29, k=76.3804 A=2.4789e-08, k=27.5954/A=4.17799e-28, k=72.1452 A=1.75386e-10, k=36.3479/A=8.05683e-31, k=78.6418 A=9.56131e-12, k=38.9201/A=3.60546e-36, k=96.1241 A=8.70438e-12, k=38.6507/A=5.93994e-39, k=104.105 A=1.77677e-08, k=29.5019/A=3.43929e-34, k=88.9709

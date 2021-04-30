@@ -1,0 +1,459 @@
+diff --git a/Makefile b/Makefile
+index bc3ae45..e2efcf3 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,6 +1,6 @@
+ GPU=0
+ CUDNN=0
+-OPENCV=0
++OPENCV=1
+ NNPACK=1
+ ARM_NEON=1
+ OPENMP=0
+diff --git a/cfg/yolov2.cfg b/cfg/yolov2.cfg
+index 088edf8..2a0cd98 100644
+--- a/cfg/yolov2.cfg
++++ b/cfg/yolov2.cfg
+@@ -5,8 +5,8 @@ subdivisions=1
+ # Training
+ # batch=64
+ # subdivisions=8
+-width=608
+-height=608
++width=416
++height=416
+ channels=3
+ momentum=0.9
+ decay=0.0005
+diff --git a/cfg/yolov3.cfg b/cfg/yolov3.cfg
+index 938ffff..9e7856e 100644
+--- a/cfg/yolov3.cfg
++++ b/cfg/yolov3.cfg
+@@ -5,8 +5,8 @@
+ # Training
+ batch=64
+ subdivisions=16
+-width=608
+-height=608
++width=320 #608
++height=320 #608
+ channels=3
+ momentum=0.9
+ decay=0.0005
+diff --git a/examples/darknet.c b/examples/darknet.c
+index d538359..097f9c4 100644
+--- a/examples/darknet.c
++++ b/examples/darknet.c
+@@ -430,7 +430,7 @@ int main(int argc, char **argv)
+     } else if (0 == strcmp(argv[1], "detector")){
+         run_detector(argc, argv);
+     } else if (0 == strcmp(argv[1], "detect")){
+-        float thresh = find_float_arg(argc, argv, "-thresh", .5);
++        float thresh = find_float_arg(argc, argv, "-thresh", .24);
+         char *filename = (argc > 4) ? argv[4]: 0;
+         char *outfile = find_char_arg(argc, argv, "-out", 0);
+         int fullscreen = find_arg(argc, argv, "-fullscreen");
+diff --git a/examples/detector.c b/examples/detector.c
+index b987ec5..fc25ae1 100644
+--- a/examples/detector.c
++++ b/examples/detector.c
+@@ -561,6 +561,8 @@ void validate_detector_recall(char *cfgfile, char *weightfile)
+ 
+ void test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filename, float thresh, float hier_thresh, char *outfile, int fullscreen)
+ {
++	printf("thresh=%f, hier_thresh=%f\n",thresh,hier_thresh);
++
+     list *options = read_data_cfg(datacfg);
+     char *name_list = option_find_str(options, "names", "data/names.list");
+     char **names = get_labels(name_list);
+@@ -575,7 +577,7 @@ void test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filenam
+     float nms=.45;
+ #ifdef NNPACK
+ 	nnp_initialize();
+-	net->threadpool = pthreadpool_create(4);
++	net->threadpool = pthreadpool_create(1);
+ #endif
+ 
+     while(1){
+diff --git a/include/darknet.h b/include/darknet.h
+index b4ea0b0..e9a4fd5 100644
+--- a/include/darknet.h
++++ b/include/darknet.h
+@@ -24,6 +24,8 @@
+ extern "C" {
+ #endif
+ 
++#define DYNAMIC_FMAP_PRUNING
++
+ #define SECRET_NUM -1234
+ extern int gpu_index;
+ 
+diff --git a/src/box.c b/src/box.c
+index 8a1772c..dcd1ce4 100644
+--- a/src/box.c
++++ b/src/box.c
+@@ -70,6 +70,26 @@ void do_nms_sort(detection *dets, int total, int classes, float thresh)
+     }
+     total = k+1;
+ 
++    if(classes == 0)
++    {
++        for(i = 0; i < total; ++i){
++            dets[i].sort_class = -1;
++        }
++
++        qsort(dets, total, sizeof(detection), nms_comparator);
++
++        for(i = 0; i < total; ++i){
++            if(dets[i].objectness == 0) continue;
++            box a = dets[i].bbox;
++            for(j = i+1; j < total; ++j){
++                box b = dets[j].bbox;
++                if (box_iou(a, b) > thresh){
++                    dets[j].objectness = 0;
++                }
++            }
++        }
++    }
++
+     for(k = 0; k < classes; ++k){
+         for(i = 0; i < total; ++i){
+             dets[i].sort_class = k;
+diff --git a/src/convolutional_layer.c b/src/convolutional_layer.c
+index e741f6f..37b3b58 100644
+--- a/src/convolutional_layer.c
++++ b/src/convolutional_layer.c
+@@ -517,6 +517,7 @@ void forward_convolutional_layer(convolutional_layer l, network net)
+             } else {
+                 im2col_cpu(im, l.c/l.groups, l.h, l.w, l.size, l.stride, l.pad, b);
+             }
++            // (mxk)[weights] * (kxn)[input] => (mxn)[output]
+             gemm(0,0,m,n,k,1,a,k,b,n,1,c,n);
+         }
+     }
+@@ -548,13 +549,20 @@ void backward_convolutional_layer(convolutional_layer l, network net)
+ 
+     for(i = 0; i < l.batch; ++i){
+         for(j = 0; j < l.groups; ++j){
++            // calculate gradient of weights for weight_updates
++            //   using convolution of loss gradient and input
+             float *a = l.delta + (i*l.groups + j)*m*k;
+             float *b = net.workspace;
+             float *c = l.weight_updates + j*l.nweights/l.groups;
+ 
++            #ifndef DYNAMIC_FMAP_PRUNING
+             float *im  = net.input + (i*l.groups + j)*l.c/l.groups*l.h*l.w;
++            #endif
++
+             float *imd = net.delta + (i*l.groups + j)*l.c/l.groups*l.h*l.w;
+ 
++            #ifndef DYNAMIC_FMAP_PRUNING
++            printf("calculating weight updates...\n");
+             if(l.size == 1){
+                 b = im;
+             } else {
+@@ -562,7 +570,11 @@ void backward_convolutional_layer(convolutional_layer l, network net)
+                         l.size, l.stride, l.pad, b);
+             }
+ 
++            // stride for loss gradient and input is "k"
++            // stride for weight is (size^2)*(#channels)
++            // (mxk)[loss gradient] * (kxn)[input (transposed)] => (mxn)[weight gradient]
+             gemm(0,1,m,n,k,1,a,k,b,k,1,c,n);
++            #endif
+ 
+             if (net.delta) {
+                 a = l.weights + j*l.nweights/l.groups;
+@@ -572,11 +584,14 @@ void backward_convolutional_layer(convolutional_layer l, network net)
+                     c = imd;
+                 }
+ 
++                // (nxm)[weight (transposed)] * (mxk)[loss gradient] => (nxk)[input gradient]
+                 gemm(1,0,n,k,m,1,a,n,b,k,0,c,k);
+ 
+                 if (l.size != 1) {
+                     col2im_cpu(net.workspace, l.c/l.groups, l.h, l.w, l.size, l.stride, l.pad, imd);
+                 }
++
++		//printf("calculating input gradient of convolutional layer\n");
+             }
+         }
+     }
+diff --git a/src/image.c b/src/image.c
+index c9434a9..a9e6351 100644
+--- a/src/image.c
++++ b/src/image.c
+@@ -243,6 +243,13 @@ void draw_detections(image im, detection *dets, int num, float thresh, char **na
+     for(i = 0; i < num; ++i){
+         char labelstr[4096] = {0};
+         int class = -1;
++
++        if((classes == 0) && (dets[i].objectness > thresh))
++	{
++                class = 0;
++                strcat(labelstr, "object");
++	}
++
+         for(j = 0; j < classes; ++j){
+             if (dets[i].prob[j] > thresh){
+                 if (class < 0) {
+@@ -266,10 +273,28 @@ void draw_detections(image im, detection *dets, int num, float thresh, char **na
+              */
+ 
+             //printf("%d %s: %.0f%%\n", i, names[class], prob*100);
++	/*
+             int offset = class*123457 % classes;
+             float red = get_color(2,offset,classes);
+             float green = get_color(1,offset,classes);
+             float blue = get_color(0,offset,classes);
++	*/
++
++            float red;
++            float green;
++            float blue;
++
++            if (classes == 0) {
++                red = 0.5;
++                green = 0.5;
++                blue = 0.5;
++            } else {
++                int offset = class*123457 % classes;
++                red = get_color(2,offset,classes);
++                green = get_color(1,offset,classes);
++                blue = get_color(0,offset,classes);
++            }
++
+             float rgb[3];
+ 
+             //width = prob*20+2;
+diff --git a/src/image_opencv.cpp b/src/image_opencv.cpp
+index 7511280..c11805a 100644
+--- a/src/image_opencv.cpp
++++ b/src/image_opencv.cpp
+@@ -9,30 +9,34 @@ using namespace cv;
+ 
+ extern "C" {
+ 
+-IplImage *image_to_ipl(image im)
++Mat image_to_mat(image im)
+ {
++    assert(im.c == 3 || im.c == 1);
+     int x,y,c;
+-    IplImage *disp = cvCreateImage(cvSize(im.w,im.h), IPL_DEPTH_8U, im.c);
+-    int step = disp->widthStep;
++    image copy = copy_image(im);
++    constrain_image(copy);
++    if(im.c == 3) rgbgr_image(copy);
++    Mat m(im.h, im.w, CV_MAKETYPE(CV_8U, im.c));
+     for(y = 0; y < im.h; ++y){
+         for(x = 0; x < im.w; ++x){
+             for(c= 0; c < im.c; ++c){
+-                float val = im.data[c*im.h*im.w + y*im.w + x];
+-                disp->imageData[y*step + x*im.c + c] = (unsigned char)(val*255);
++                float val = copy.data[c*im.h*im.w + y*im.w + x];
++                m.data[y*im.w*im.c + x*im.c + c] = (unsigned char)(val*255);
+             }
+         }
+     }
+-    return disp;
++    free_image(copy);
++    return m;
+ }
+ 
+-image ipl_to_image(IplImage* src)
++image mat_to_image(Mat m)
+ {
+-    int h = src->height;
+-    int w = src->width;
+-    int c = src->nChannels;
++    int h = m.rows;
++    int w = m.cols;
++    int c = m.channels();
+     image im = make_image(w, h, c);
+-    unsigned char *data = (unsigned char *)src->imageData;
+-    int step = src->widthStep;
++    unsigned char *data = (unsigned char*)m.data;
++    int step = m.step;
+     int i, j, k;
+ 
+     for(i = 0; i < h; ++i){
+@@ -42,26 +46,6 @@ image ipl_to_image(IplImage* src)
+             }
+         }
+     }
+-    return im;
+-}
+-
+-Mat image_to_mat(image im)
+-{
+-    image copy = copy_image(im);
+-    constrain_image(copy);
+-    if(im.c == 3) rgbgr_image(copy);
+-
+-    IplImage *ipl = image_to_ipl(copy);
+-    Mat m = cvarrToMat(ipl, true);
+-    cvReleaseImage(&ipl);
+-    free_image(copy);
+-    return m;
+-}
+-
+-image mat_to_image(Mat m)
+-{
+-    IplImage ipl = m;
+-    image im = ipl_to_image(&ipl);
+     rgbgr_image(im);
+     return im;
+ }
+@@ -72,9 +56,9 @@ void *open_video_stream(const char *f, int c, int w, int h, int fps)
+     if(f) cap = new VideoCapture(f);
+     else cap = new VideoCapture(c);
+     if(!cap->isOpened()) return 0;
+-    if(w) cap->set(CV_CAP_PROP_FRAME_WIDTH, w);
+-    if(h) cap->set(CV_CAP_PROP_FRAME_HEIGHT, w);
+-    if(fps) cap->set(CV_CAP_PROP_FPS, w);
++    if(w) cap->set(CAP_PROP_FRAME_WIDTH, w);
++    if(h) cap->set(CAP_PROP_FRAME_HEIGHT, w);
++    if(fps) cap->set(CAP_PROP_FPS, w);
+     return (void *) cap;
+ }
+ 
+@@ -123,7 +107,7 @@ void make_window(char *name, int w, int h, int fullscreen)
+ {
+     namedWindow(name, WINDOW_NORMAL); 
+     if (fullscreen) {
+-        setWindowProperty(name, CV_WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN);
++        setWindowProperty(name, WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);
+     } else {
+         resizeWindow(name, w, h);
+         if(strcmp(name, "Demo") == 0) moveWindow(name, 0, 0);
+diff --git a/src/network.c b/src/network.c
+index aaab799..5eceb23 100644
+--- a/src/network.c
++++ b/src/network.c
+@@ -193,6 +193,7 @@ void forward_network(network *netp)
+         return;
+     }
+ #endif
++    //double time;
+     network net = *netp;
+     int i;
+     for(i = 0; i < net.n; ++i){
+@@ -201,7 +202,9 @@ void forward_network(network *netp)
+         if(l.delta){
+             fill_cpu(l.outputs * l.batch, 0, l.delta, 1);
+         }
++	//time=what_time_is_it_now();
+         l.forward(l, net);
++	//printf("l%i took %f seconds.\n", i, what_time_is_it_now()-time);
+         net.input = l.output;
+         if(l.truth) {
+             net.truth = l.output;
+@@ -272,6 +275,7 @@ void backward_network(network *netp)
+     int i;
+     network orig = net;
+     for(i = net.n-1; i >= 0; --i){
++	//printf("at back layer %i\n",i);
+         layer l = net.layers[i];
+         if(l.stopbackward) break;
+         if(i == 0){
+diff --git a/src/parser.c b/src/parser.c
+index 78611cf..0e88d4a 100644
+--- a/src/parser.c
++++ b/src/parser.c
+@@ -2,6 +2,7 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <assert.h>
++#include <stdint.h>
+ 
+ #include "activation_layer.h"
+ #include "logistic_layer.h"
+diff --git a/src/region_layer.c b/src/region_layer.c
+index 179f5e3..2eba5c9 100644
+--- a/src/region_layer.c
++++ b/src/region_layer.c
+@@ -210,6 +210,9 @@ void forward_region_layer(const layer l, network net)
+                         int obj_index = entry_index(l, b, n, l.coords);
+                         float scale =  l.output[obj_index];
+                         l.delta[obj_index] = l.noobject_scale * (0 - l.output[obj_index]);
++			{
++				//printf("set delta @ %i to %f\n", obj_index, l.delta[obj_index]);
++			}
+                         float p = scale*get_hierarchy_probability(l.output + class_index, l.softmax_tree, class, l.w*l.h);
+                         if(p > maxp){
+                             maxp = p;
+@@ -219,7 +222,11 @@ void forward_region_layer(const layer l, network net)
+                     int class_index = entry_index(l, b, maxi, l.coords + 1);
+                     int obj_index = entry_index(l, b, maxi, l.coords);
+                     delta_region_class(l.output, l.delta, class_index, class, l.classes, l.softmax_tree, l.class_scale, l.w*l.h, &avg_cat, !l.softmax);
+-                    if(l.output[obj_index] < .3) l.delta[obj_index] = l.object_scale * (.3 - l.output[obj_index]);
++                    if(l.output[obj_index] < .3) 
++			{
++			l.delta[obj_index] = l.object_scale * (.3 - l.output[obj_index]);
++			//printf("set delta @ %i to %f\n", obj_index, l.delta[obj_index]);
++			}
+                     else  l.delta[obj_index] = 0;
+                     l.delta[obj_index] = 0;
+                     ++class_count;
+@@ -247,6 +254,9 @@ void forward_region_layer(const layer l, network net)
+                     avg_anyobj += l.output[obj_index];
+                     l.delta[obj_index] = l.noobject_scale * (0 - l.output[obj_index]);
+                     if(l.background) l.delta[obj_index] = l.noobject_scale * (1 - l.output[obj_index]);
++			{
++				//printf("set delta @ %i to %f\n", obj_index, l.delta[obj_index]);
++			}
+                     if (best_iou > l.thresh) {
+                         l.delta[obj_index] = 0;
+                     }
+@@ -308,6 +318,10 @@ void forward_region_layer(const layer l, network net)
+                 l.delta[obj_index] = l.object_scale * (0 - l.output[obj_index]);
+             }
+ 
++		{
++			//printf("set delta @ %i to %f\n", obj_index, l.delta[obj_index]);
++		}
++
+             int class = net.truth[t*(l.coords + 1) + b*l.truths + l.coords];
+             if (l.map) class = l.map[class];
+             int class_index = entry_index(l, b, best_n*l.w*l.h + j*l.w + i, l.coords + 1);
+@@ -322,15 +336,15 @@ void forward_region_layer(const layer l, network net)
+ 
+ void backward_region_layer(const layer l, network net)
+ {
+-    /*
+-       int b;
+-       int size = l.coords + l.classes + 1;
+-       for (b = 0; b < l.batch*l.n; ++b){
+-       int index = (b*size + 4)*l.w*l.h;
+-       gradient_array(l.output + index, l.w*l.h, LOGISTIC, l.delta + index);
+-       }
+-       axpy_cpu(l.batch*l.inputs, 1, l.delta, 1, net.delta, 1);
+-     */
++
++    int b;
++    int size = l.coords + l.classes + 1;
++    for (b = 0; b < l.batch*l.n; ++b){
++        int index = (b*size + 4)*l.w*l.h;
++        gradient_array(l.output + index, l.w*l.h, LOGISTIC, l.delta + index);
++    }
++    axpy_cpu(l.batch*l.inputs, 1, l.delta, 1, net.delta, 1);
++
+ }
+ 
+ void correct_region_boxes(detection *dets, int n, int w, int h, int netw, int neth, int relative)
+diff --git a/src/reorg_layer.c b/src/reorg_layer.c
+index 31d6b84..6930ba8 100644
+--- a/src/reorg_layer.c
++++ b/src/reorg_layer.c
+@@ -103,9 +103,9 @@ void forward_reorg_layer(const layer l, network net)
+             copy_cpu(l.inputs, net.input + i*l.inputs, 1, l.output + i*l.outputs, 1);
+         }
+     } else if (l.reverse){
+-        reorg_cpu(net.input, l.w, l.h, l.c, l.batch, l.stride, 1, l.output);
++        reorg_cpu(net.input, l.out_w, l.out_h, l.out_c, l.batch, l.stride, 1, l.output);
+     } else {
+-        reorg_cpu(net.input, l.w, l.h, l.c, l.batch, l.stride, 0, l.output);
++        reorg_cpu(net.input, l.out_w, l.out_h, l.out_c, l.batch, l.stride, 0, l.output);
+     }
+ }
+ 

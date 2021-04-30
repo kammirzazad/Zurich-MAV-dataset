@@ -1,0 +1,3 @@
+pottedplant 917 259 1019 336
+pottedplant 989 260 1097 351
+car 0 642 88 722

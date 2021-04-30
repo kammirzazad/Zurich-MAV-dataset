@@ -1,0 +1,8 @@
+AGZ_05050.txt
+AGZ_05800.txt
+AGZ_06100.txt
+AGZ_06250.txt
+AGZ_50350.txt
+AGZ_67150.txt
+AGZ_70900.txt
+AGZ_72850.txt
