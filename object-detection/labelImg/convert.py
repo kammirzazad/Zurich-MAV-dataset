@@ -39,10 +39,10 @@ for image in images:
 		w = float(data[3])
 		h = float(data[4])
 
-		left  = (x - w/2.0) * imWidth
-		right = (x + w/2.0) * imWidth
-		top   = (y - h/2.0) * imHeight
-		bot   = (y + h/2.0) * imHeight
+		left  = int((x - w/2.0) * imWidth)
+		right = int((x + w/2.0) * imWidth)
+		top   = int((y - h/2.0) * imHeight)
+		bot   = int((y + h/2.0) * imHeight)
 
 		if left < 0:
 			left = 0
