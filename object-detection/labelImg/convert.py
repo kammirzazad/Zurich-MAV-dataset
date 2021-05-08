@@ -1,5 +1,8 @@
 import	sys
 
+imWidth = 1920
+imHeight = 1080
+
 raw_files = './raw/'
 txt_files = './txt/'
 
@@ -29,8 +32,32 @@ for image in images:
 
 	for line in raw_fh:
 		data = line.split('\n')[0].split()
+
 		classId = int(data[0])
-		txt_fh.write(classes[classId]+' '+data[1]+' '+data[2]+' '+data[3]+' '+data[4]+'\n')
+		x = float(data[1])
+		y = float(data[2])
+		w = float(data[3])
+		h = float(data[4])
+
+		left  = (x - w/2.0) * imWidth
+		right = (x + w/2.0) * imWidth
+		top   = (y - h/2.0) * imHeight
+		bot   = (y + h/2.0) * imHeight
+
+		if left < 0:
+			left = 0
+
+		if right > imWidth-1:
+			right = imWidth-1
+
+		if top < 0:
+			top = 0
+
+		if bot > imHeight-1:
+			bot = imHeight-1;
+
+		# left, top, right, bot
+		txt_fh.write(classes[classId]+' '+str(left)+' '+str(top)+' '+str(right)+' '+str(bot)+'\n')
 	
 	raw_fh.close()
 	txt_fh.close()
