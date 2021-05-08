@@ -1,0 +1,3 @@
+pottedplant 1538 407 1607 467
+pottedplant 1434 581 1485 642
+car 0 665 121 755
