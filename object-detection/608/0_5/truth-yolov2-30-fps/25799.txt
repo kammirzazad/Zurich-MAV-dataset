@@ -1,0 +1,4 @@
+pottedplant 657 468 725 522
+pottedplant 692 477 751 525
+pottedplant 831 236 900 294
+car 773 951 995 1079

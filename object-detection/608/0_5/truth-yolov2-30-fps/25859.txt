@@ -1,0 +1,6 @@
+tvmonitor 366 912 477 1070
+pottedplant 694 478 753 529
+pottedplant 971 492 1056 590
+pottedplant 829 195 914 243
+pottedplant 660 471 725 524
+car 760 991 1022 1079

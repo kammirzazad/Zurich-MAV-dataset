@@ -1,0 +1,4 @@
+pottedplant 692 477 756 526
+pottedplant 659 471 726 525
+pottedplant 831 233 909 288
+car 776 970 991 1079

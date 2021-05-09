@@ -1,0 +1,3 @@
+pottedplant 940 193 1023 241
+pottedplant 834 418 887 464
+person 1465 940 1539 1079

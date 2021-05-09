@@ -1,0 +1,4 @@
+pottedplant 679 553 724 600
+pottedplant 1503 543 1561 612
+pottedplant 1336 526 1391 579
+person 1267 1026 1336 1078

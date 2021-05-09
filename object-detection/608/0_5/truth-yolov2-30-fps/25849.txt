@@ -1,0 +1,4 @@
+tvmonitor 365 897 475 1065
+pottedplant 689 478 754 527
+pottedplant 981 507 1049 575
+pottedplant 659 474 725 524

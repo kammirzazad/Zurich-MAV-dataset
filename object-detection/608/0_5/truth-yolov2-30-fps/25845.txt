@@ -1,0 +1,3 @@
+tvmonitor 371 899 478 1072
+pottedplant 691 477 758 530
+pottedplant 655 473 725 525

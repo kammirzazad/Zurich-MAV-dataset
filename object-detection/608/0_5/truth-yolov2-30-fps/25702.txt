@@ -1,0 +1,5 @@
+pottedplant 755 417 826 469
+pottedplant 791 188 855 243
+pottedplant 801 423 856 468
+car 867 868 1112 1074
+person 1482 913 1584 1073

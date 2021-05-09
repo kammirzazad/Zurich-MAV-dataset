@@ -1,0 +1,4 @@
+tvmonitor 367 901 475 1066
+pottedplant 660 472 726 527
+pottedplant 980 508 1048 577
+pottedplant 697 481 753 526

@@ -1,0 +1,5 @@
+tvmonitor 371 901 476 1067
+pottedplant 693 479 753 525
+pottedplant 656 473 726 525
+pottedplant 839 222 917 283
+car 762 981 1010 1079

@@ -1,0 +1,5 @@
+pottedplant 905 189 978 235
+pottedplant 796 188 854 240
+pottedplant 928 423 991 470
+car 873 868 1120 1074
+person 1487 913 1576 1071

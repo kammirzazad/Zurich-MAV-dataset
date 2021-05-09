@@ -1,0 +1,4 @@
+pottedplant 799 180 881 235
+pottedplant 627 480 689 527
+pottedplant 742 510 803 562
+pottedplant 641 188 713 238

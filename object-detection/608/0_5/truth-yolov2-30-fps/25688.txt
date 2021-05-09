@@ -1,0 +1,4 @@
+pottedplant 754 416 819 468
+pottedplant 925 191 999 243
+pottedplant 928 421 991 473
+person 1455 945 1539 1079

@@ -1,0 +1,4 @@
+pottedplant 731 183 829 243
+pottedplant 727 520 793 571
+pottedplant 920 521 998 576
+pottedplant 901 533 1006 650

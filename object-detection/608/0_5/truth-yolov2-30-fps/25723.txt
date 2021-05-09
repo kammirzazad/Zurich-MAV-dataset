@@ -1,0 +1,3 @@
+pottedplant 742 417 800 464
+pottedplant 976 432 1062 533
+car 844 877 1072 1073
