@@ -1,9 +1,0 @@
-pottedplant 1197 500 1268 562
-pottedplant 1070 266 1154 340
-pottedplant 304 449 382 511
-pottedplant 464 446 553 508
-pottedplant 965 455 1046 519
-pottedplant 451 490 523 549
-pottedplant 448 191 557 258
-car 1097 876 1370 1063
-person 1428 976 1498 1066
