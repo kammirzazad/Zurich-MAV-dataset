@@ -3,4 +3,3 @@ pottedplant 776 516 859 589
 pottedplant 639 187 749 261
 pottedplant 632 508 706 570
 pottedplant 916 524 1002 590
-pottedplant 638 232 734 306

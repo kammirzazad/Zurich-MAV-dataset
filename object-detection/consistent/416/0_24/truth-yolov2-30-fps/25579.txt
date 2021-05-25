@@ -5,7 +5,6 @@ pottedplant 329 188 462 264
 pottedplant 417 197 546 270
 pottedplant 1076 271 1142 330
 pottedplant 441 484 500 544
-pottedplant 300 210 551 298
 pottedplant 436 235 520 302
 pottedplant 433 444 499 504
 pottedplant 220 439 319 503

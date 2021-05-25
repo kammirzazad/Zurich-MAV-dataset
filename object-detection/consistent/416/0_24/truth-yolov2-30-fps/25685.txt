@@ -1,4 +1,3 @@
-pottedplant 161 173 396 263
 pottedplant 1013 442 1104 515
 pottedplant 814 430 886 493
 pottedplant 286 430 343 492

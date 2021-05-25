@@ -1,5 +1,4 @@
 pottedplant 970 315 1054 414
-pottedplant 876 597 945 675
 pottedplant 1564 615 1633 692
 pottedplant 882 367 924 410
 pottedplant 903 350 972 419

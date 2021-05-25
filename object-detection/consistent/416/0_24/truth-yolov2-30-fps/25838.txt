@@ -3,5 +3,4 @@ pottedplant 930 507 1014 585
 pottedplant 767 180 865 262
 pottedplant 677 246 761 325
 pottedplant 686 500 749 563
-pottedplant 673 460 742 517
 car 768 980 1037 1077

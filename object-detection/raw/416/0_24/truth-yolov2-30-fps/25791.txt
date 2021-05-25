@@ -1,0 +1,6 @@
+pottedplant 681 243 772 328
+pottedplant 928 501 1005 585
+pottedplant 686 460 752 517
+pottedplant 154 488 237 553
+pottedplant 769 188 865 266
+car 791 942 1007 1079

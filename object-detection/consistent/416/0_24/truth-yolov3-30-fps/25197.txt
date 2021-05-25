@@ -1,6 +1,5 @@
 pottedplant 800 574 841 613
 pottedplant 925 228 1011 323
-pottedplant 1536 551 1614 631
 pottedplant 1407 528 1446 573
 pottedplant 1582 556 1623 595
 truck 1468 898 1747 1048

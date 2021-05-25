@@ -6,7 +6,6 @@ pottedplant 911 188 1011 259
 pottedplant 295 434 365 501
 pottedplant 927 448 994 505
 pottedplant 1066 242 1136 311
-pottedplant 826 224 903 303
 pottedplant 1050 468 1110 536
 pottedplant 213 179 421 279
 car 925 862 1171 1069

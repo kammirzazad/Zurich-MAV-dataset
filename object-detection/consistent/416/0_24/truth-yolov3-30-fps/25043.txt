@@ -1,8 +1,6 @@
 pottedplant 1537 412 1599 449
 pottedplant 877 364 920 399
 pottedplant 1571 604 1636 672
-pottedplant 878 588 947 674
-pottedplant 1472 407 1522 439
 pottedplant 974 309 1054 412
 pottedplant 849 661 887 693
 truck 1438 935 1742 1074

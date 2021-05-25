@@ -4,6 +4,5 @@ pottedplant 818 430 886 488
 pottedplant 927 443 999 502
 pottedplant 818 192 904 265
 pottedplant 929 192 1021 260
-pottedplant 153 164 401 260
 car 940 879 1144 1055
 person 1501 920 1565 1008

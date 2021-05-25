@@ -42,23 +42,48 @@ def	getIoU(currDet,dets):
 			if currIoU > maxIoU:
 				maxIoU = currIoU
 	return	maxIoU
-			
+	
+		
+def	isConsistent(i,thresh,currDet,files):
+	det_i_plus_1 = True
+	det_i_plus_2 = True
+	det_i_minus_1 = True
+	det_i_minus_2 = True
 
-if len(sys.argv) != 3:
-	print('usage:',sys.argv[0],'[path2folder] [thresh]')
-	exit(1)
 
-thresh = float(sys.argv[2])
-files = sorted(glob(sys.argv[1]+'/*.txt'))
+	if i < len(files)-2:
+		dets = loadDets(files[i+2])
+		det_i_plus_2 = (getIoU(currDet,dets) > thresh)
 
-for i in range(1,len(files)-1):
-	dets_i = loadDets(files[i])
-	dets_prev = loadDets(files[i-1])
-	dets_next = loadDets(files[i+1])
+	if i < len(files)-1:
+		dets = loadDets(files[i+1])
+		det_i_plus_1 = (getIoU(currDet,dets) > thresh)
 
-	with open(files[i],'w') as fh:
-		for currDet in dets_i:
-			if getIoU(currDet,dets_prev) > thresh or getIoU(currDet,dets_next) > thresh:
-				fh.write(currDet['name']+' '+str(currDet['prob'])+' '+str(currDet['left'])+' '+str(currDet['top'])+' '+str(currDet['right'])+' '+str(currDet['bot'])+'\n')
-			else:
-				print('removed',currDet['name'],'from',files[i])
+	if i > 0:
+		dets = loadDets(files[i-1])
+		det_i_minus_1 = (getIoU(currDet,dets) > thresh)
+
+	if i > 1:
+		dets = loadDets(files[i-2])
+		det_i_minus_2 = (getIoU(currDet,dets) > thresh)
+
+	return	(det_i_minus_2 and det_i_minus_1) or (det_i_minus_1 and det_i_plus_1) or (det_i_plus_1 and det_i_plus_2)
+
+
+if __name__ == "__main__":
+
+	if len(sys.argv) != 3:
+		print('usage:',sys.argv[0],'[path2folder] [thresh]')
+		exit(1)
+
+	thresh = float(sys.argv[2])
+	files = sorted(glob(sys.argv[1]+'/*.txt'))
+
+	for i in range(len(files)):
+		dets = loadDets(files[i])
+		with open(files[i],'w') as fh:
+			for currDet in dets:
+				if isConsistent(i,thresh,currDet,files):
+					fh.write(currDet['name']+' '+str(currDet['prob'])+' '+str(currDet['left'])+' '+str(currDet['top'])+' '+str(currDet['right'])+' '+str(currDet['bot'])+'\n')
+				else:
+					print('removed',currDet['name'],'from',files[i])

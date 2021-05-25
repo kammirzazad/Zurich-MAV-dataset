@@ -1,4 +1,3 @@
-pottedplant 813 618 861 656
 pottedplant 1565 581 1628 651
 pottedplant 943 274 1028 339
 truck 1447 912 1742 1072
