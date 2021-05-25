@@ -72,10 +72,11 @@ def	isConsistent(i,thresh,currDet,files):
 
 if __name__ == "__main__":
 
-	if len(sys.argv) != 3:
-		print('usage:',sys.argv[0],'[path2folder] [thresh]')
+	if len(sys.argv) not in [3,4]:
+		print('usage:',sys.argv[0],'[path2folder] [thresh] [debug (opt)]')
 		exit(1)
 
+	debug = (len(sys.argv)==4)
 	thresh = float(sys.argv[2])
 	files = sorted(glob(sys.argv[1]+'/*.txt'))
 
@@ -85,5 +86,5 @@ if __name__ == "__main__":
 			for currDet in dets:
 				if isConsistent(i,thresh,currDet,files):
 					fh.write(currDet['name']+' '+str(currDet['prob'])+' '+str(currDet['left'])+' '+str(currDet['top'])+' '+str(currDet['right'])+' '+str(currDet['bot'])+'\n')
-				else:
+				elif debug:
 					print('removed',currDet['name'],'from',files[i])
