@@ -1,8 +1,0 @@
-pottedplant 736 182 876 263
-pottedplant 762 523 859 587
-pottedplant 911 530 1012 593
-pottedplant 625 186 725 259
-pottedplant 920 548 993 632
-pottedplant 774 572 843 634
-pottedplant 630 238 713 312
-pottedplant 618 520 685 570
