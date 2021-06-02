@@ -62,6 +62,9 @@ def	isConsistent(i,thresh,currDet,files,count):
 		else:
 			det_i_prev.append(True)
 
+	return	(det_i_prev[1] and det_i_prev[0]) or (det_i_prev[0] and det_i_next[0]) or (det_i_next[0] and det_i_next[1])
+
+	"""
 	# hardcoded part
 	assert count == 5
 	return	(det_i_prev[3] and det_i_prev[2] and det_i_prev[1] and det_i_prev[0]) or\
@@ -69,6 +72,7 @@ def	isConsistent(i,thresh,currDet,files,count):
 		(det_i_prev[1] and det_i_prev[0] and det_i_next[0] and det_i_next[1]) or\
 		(det_i_prev[0] and det_i_next[0] and det_i_next[1] and det_i_next[2]) or\
 		(det_i_next[0] and det_i_next[1] and det_i_next[2] and det_i_next[3])
+	"""
 
 
 if __name__ == "__main__":
@@ -85,7 +89,7 @@ if __name__ == "__main__":
 		dets = loadDets(files[i])
 		with open(files[i],'w') as fh:
 			for currDet in dets:
-				if isConsistent(i,thresh,currDet,files,5):
+				if isConsistent(i,thresh,currDet,files,3):
 					fh.write(currDet['name']+' '+str(currDet['prob'])+' '+str(currDet['left'])+' '+str(currDet['top'])+' '+str(currDet['right'])+' '+str(currDet['bot'])+'\n')
 				elif debug:
 					print('removed',currDet['name'],'from',files[i])
