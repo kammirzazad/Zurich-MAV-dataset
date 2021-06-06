@@ -1,0 +1,3 @@
+pottedplant 948 325 1098 424
+pottedplant 1019 613 1086 691
+bench 611 970 898 1051

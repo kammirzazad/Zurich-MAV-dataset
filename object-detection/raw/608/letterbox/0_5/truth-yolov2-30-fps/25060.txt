@@ -1,0 +1,5 @@
+pottedplant 913 324 1017 406
+pottedplant 1540 407 1600 485
+pottedplant 1019 610 1084 690
+bench 610 973 886 1060
+car 0 665 77 756

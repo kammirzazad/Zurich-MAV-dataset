@@ -1,0 +1,3 @@
+pottedplant 913 321 1008 398
+pottedplant 998 313 1111 396
+car 1511 927 1745 1077

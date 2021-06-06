@@ -1,0 +1,4 @@
+pottedplant 913 314 1013 404
+pottedplant 1527 605 1597 694
+bench 616 976 881 1057
+car 0 665 81 758
