@@ -1,0 +1,7 @@
+pottedplant 887 603 976 678
+pottedplant 1060 591 1162 667
+pottedplant 907 648 983 705
+pottedplant 913 336 995 398
+pottedplant 423 593 502 648
+pottedplant 1050 325 1134 392
+truck 1596 831 1905 1067
