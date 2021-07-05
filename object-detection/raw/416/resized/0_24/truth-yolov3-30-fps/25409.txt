@@ -1,0 +1,9 @@
+pottedplant 1181 488 1220 531
+pottedplant 515 527 554 568
+pottedplant 662 463 715 507
+pottedplant 1317 515 1363 545
+pottedplant 504 464 570 505
+pottedplant 602 201 686 285
+pottedplant 1366 514 1409 547
+car 1300 889 1568 1053
+truck 1300 889 1568 1053
