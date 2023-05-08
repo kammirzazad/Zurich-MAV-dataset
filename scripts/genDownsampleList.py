@@ -20,7 +20,7 @@ for i in range(numFrames):
         break
     indice.append(index)
 
-fn = 'AGZ_' + str(fps) + '_fps_' + str(numFrames) + '.txt'
+fn = '../imagelists/AGZ_' + str(fps) + '_fps_' + str(numFrames) + '.txt'
 with open(fn, 'w') as fh:
     for index in indice:
         fh.write(str(index).zfill(5)+'.txt\n')

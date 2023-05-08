@@ -19,7 +19,7 @@ PRINT_COUNT=false
 #TRUTHDIR="edited-yolov3"
 TRUTHDIR="consistent/416/resized/0_24/truth-yolov3-30-fps"
 
-RESDIR="~/Documents/DREML-data/simulator/"
+RESDIR=$(realpath ~/Documents/DREML-data/simulator/)
 
 print_mAP () {
    echo -e -n "$1   \t"
