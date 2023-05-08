@@ -1,0 +1,3 @@
+[submodule "scripts/mAP"]
+	path = scripts/mAP
+	url = https://github.com/Cartucho/mAP.git
