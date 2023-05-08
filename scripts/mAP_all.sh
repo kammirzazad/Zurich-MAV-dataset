@@ -19,7 +19,7 @@ PRINT_COUNT=false
 #TRUTHDIR="edited-yolov3"
 TRUTHDIR="consistent/416/resized/0_24/truth-yolov3-30-fps"
 
-RESDIR="../../DREML-data/simulator/"
+RESDIR="~/Documents/DREML-data/simulator/"
 
 print_mAP () {
    echo -e -n "$1   \t"
@@ -36,7 +36,7 @@ rm ./mAP/input/ground-truth/*
 rm ./mAP/input/detection-results/*
 
 # copy ground truth
-cp ../Zurich-MAV-dataset/object-detection/${TRUTHDIR}/*.txt ./mAP/input/ground-truth/
+cp ../object-detection/${TRUTHDIR}/*.txt ./mAP/input/ground-truth/
 
 print_mAP "random/0/memcopy/uniform"
 print_mAP "adaptive/0/memcopy/uniform"
