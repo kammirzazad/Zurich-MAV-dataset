@@ -1,0 +1,2 @@
+pottedplant 464 312 627 425
+parking_meter 460 895 600 1079

@@ -1,0 +1,4 @@
+pottedplant 1356 435 1431 504
+pottedplant 1360 470 1427 507
+pottedplant 1453 462 1515 501
+pottedplant 1237 449 1291 475

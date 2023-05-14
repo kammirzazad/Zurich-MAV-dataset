@@ -1,0 +1,4 @@
+pottedplant 464 312 620 423
+parking_meter 468 887 607 1079
+truck 174 853 513 1072
+person 1402 842 1623 1050

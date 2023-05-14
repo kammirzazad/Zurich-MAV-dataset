@@ -1,0 +1,2 @@
+pottedplant 867 748 936 820
+person 405 425 455 479

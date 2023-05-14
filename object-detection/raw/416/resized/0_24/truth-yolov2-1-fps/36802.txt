@@ -1,0 +1,4 @@
+pottedplant 476 508 546 575
+pottedplant 579 759 637 812
+person 1116 929 1179 1053
+person 244 468 302 519

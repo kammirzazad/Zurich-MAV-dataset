@@ -1,0 +1,3 @@
+vase 1071 726 1141 798
+pottedplant 996 693 1177 821
+pottedplant 1071 445 1144 517
