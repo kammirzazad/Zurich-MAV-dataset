@@ -1,0 +1,5 @@
+parking_meter 1183 567 1303 734
+stop_sign 1796 484 1874 566
+stop_sign 1016 501 1122 584
+truck 87 555 356 732
+car 0 603 56 668

@@ -1,0 +1,6 @@
+pottedplant 809 362 866 396
+pottedplant 917 349 972 383
+pottedplant 881 349 933 384
+bicycle 1453 720 1590 794
+motorbike 1453 720 1590 794
+car 1683 659 1917 804

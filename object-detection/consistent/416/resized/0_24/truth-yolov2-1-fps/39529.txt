@@ -1,0 +1,4 @@
+fire_hydrant 803 827 871 945
+fire_hydrant 764 798 872 985
+car 1387 592 1605 768
+person 603 724 767 1033

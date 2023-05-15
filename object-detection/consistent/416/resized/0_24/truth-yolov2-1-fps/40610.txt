@@ -1,0 +1,2 @@
+pottedplant 1805 618 1917 815
+stop_sign 466 683 502 767

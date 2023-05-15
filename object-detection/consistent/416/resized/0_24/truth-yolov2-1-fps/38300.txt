@@ -1,0 +1,4 @@
+pottedplant 461 308 621 421
+parking_meter 451 892 605 1079
+boat 187 868 504 1075
+person 1384 839 1618 1055
