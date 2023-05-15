@@ -1,3 +1,0 @@
-pottedplant 831 723 1038 842
-pottedplant 777 755 845 817
-pottedplant 912 759 981 819

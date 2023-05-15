@@ -1,3 +1,0 @@
-pottedplant 492 340 643 446
-pottedplant 473 348 569 435
-truck 203 883 519 1077

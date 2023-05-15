@@ -1,5 +1,0 @@
-pottedplant 1535 433 1596 470
-pottedplant 1429 421 1502 476
-pottedplant 1313 428 1363 454
-pottedplant 1511 447 1563 476
-motorbike 1452 863 1919 1079

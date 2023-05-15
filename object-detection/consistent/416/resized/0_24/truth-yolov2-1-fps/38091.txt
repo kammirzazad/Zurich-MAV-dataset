@@ -1,2 +1,0 @@
-pottedplant 504 412 644 527
-pottedplant 481 419 587 512

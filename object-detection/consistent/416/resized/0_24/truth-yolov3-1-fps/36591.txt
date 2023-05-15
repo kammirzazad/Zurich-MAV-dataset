@@ -1,2 +1,0 @@
-pottedplant 868 726 1014 818
-pottedplant 637 1022 798 1078

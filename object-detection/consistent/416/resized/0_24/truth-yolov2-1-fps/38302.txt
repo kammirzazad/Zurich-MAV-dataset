@@ -1,4 +1,0 @@
-pottedplant 473 312 634 423
-parking_meter 469 892 610 1079
-boat 187 864 511 1073
-person 1396 839 1623 1052

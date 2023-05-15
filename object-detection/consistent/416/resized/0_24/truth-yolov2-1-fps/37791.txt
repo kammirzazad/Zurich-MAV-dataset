@@ -1,2 +1,0 @@
-pottedplant 501 427 591 522
-pottedplant 522 432 688 541

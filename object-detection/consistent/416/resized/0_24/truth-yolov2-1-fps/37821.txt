@@ -1,2 +1,0 @@
-pottedplant 500 430 652 548
-pottedplant 494 425 584 526

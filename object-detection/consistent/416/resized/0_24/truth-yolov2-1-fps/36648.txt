@@ -1,2 +1,0 @@
-pottedplant 738 750 815 819
-person 315 448 380 494

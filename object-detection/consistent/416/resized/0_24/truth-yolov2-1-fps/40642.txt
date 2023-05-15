@@ -1,2 +1,0 @@
-pottedplant 1776 615 1919 838
-pottedplant 586 191 644 233

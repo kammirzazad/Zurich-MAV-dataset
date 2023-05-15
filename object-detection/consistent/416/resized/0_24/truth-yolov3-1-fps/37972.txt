@@ -1,2 +1,0 @@
-pottedplant 652 420 725 504
-pottedplant 579 404 651 495

@@ -1,4 +1,0 @@
-pottedplant 488 333 642 441
-pottedplant 476 346 566 429
-truck 199 877 523 1079
-boat 199 877 523 1079

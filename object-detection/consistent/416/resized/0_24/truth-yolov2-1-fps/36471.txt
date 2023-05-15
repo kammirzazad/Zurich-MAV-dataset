@@ -1,2 +1,0 @@
-pottedplant 933 926 1270 1076
-parking_meter 1153 930 1404 1072

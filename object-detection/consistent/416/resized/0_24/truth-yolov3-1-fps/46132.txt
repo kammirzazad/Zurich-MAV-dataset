@@ -1,3 +1,0 @@
-pottedplant 806 361 864 397
-pottedplant 921 349 971 382
-car 1680 659 1914 805

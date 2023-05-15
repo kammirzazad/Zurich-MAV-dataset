@@ -1,8 +1,0 @@
-pottedplant 1427 444 1500 479
-pottedplant 1511 447 1561 477
-pottedplant 1534 434 1597 469
-pottedplant 1309 427 1361 453
-pottedplant 1435 433 1492 469
-pottedplant 1580 432 1627 467
-motorbike 1450 859 1917 1077
-person 794 509 1004 863

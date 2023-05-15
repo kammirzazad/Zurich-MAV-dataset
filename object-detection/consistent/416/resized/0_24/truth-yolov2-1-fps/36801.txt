@@ -1,3 +1,0 @@
-pottedplant 467 503 537 578
-pottedplant 1597 353 1717 435
-pottedplant 571 505 630 575

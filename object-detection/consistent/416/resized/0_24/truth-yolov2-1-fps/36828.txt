@@ -1,2 +1,0 @@
-pottedplant 573 762 622 825
-pottedplant 241 472 298 516

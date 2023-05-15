@@ -1,3 +1,0 @@
-pottedplant 1634 342 1755 444
-pottedplant 532 729 711 851
-person 267 463 311 514

@@ -1,2 +1,0 @@
-pottedplant 1776 615 1919 843
-stop_sign 376 690 422 776

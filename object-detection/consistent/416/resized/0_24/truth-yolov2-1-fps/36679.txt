@@ -1,4 +1,0 @@
-pottedplant 761 756 832 830
-pottedplant 616 734 804 854
-pottedplant 625 502 686 556
-pottedplant 634 754 709 825

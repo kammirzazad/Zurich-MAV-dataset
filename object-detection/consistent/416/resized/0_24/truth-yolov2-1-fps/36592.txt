@@ -1,2 +1,0 @@
-pottedplant 765 762 841 818
-pottedplant 906 754 973 814
