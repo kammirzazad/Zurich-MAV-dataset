@@ -1,0 +1,4 @@
+pottedplant 516 504 575 565
+pottedplant 1618 341 1764 451
+pottedplant 569 889 639 946
+chair 591 764 645 832

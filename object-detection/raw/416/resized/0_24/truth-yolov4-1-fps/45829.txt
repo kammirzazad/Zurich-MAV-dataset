@@ -1,0 +1,6 @@
+pottedplant 1375 439 1453 497
+pottedplant 1465 453 1532 492
+pottedplant 1234 448 1283 479
+pottedplant 1539 118 1618 179
+bicycle 1731 715 1917 815
+person 669 811 704 854

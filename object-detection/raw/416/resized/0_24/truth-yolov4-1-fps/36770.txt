@@ -1,0 +1,11 @@
+pottedplant 515 499 575 568
+pottedplant 510 742 555 818
+pottedplant 655 743 714 773
+pottedplant 638 742 675 774
+pottedplant 1645 351 1768 442
+pottedplant 570 888 642 947
+pottedplant 555 754 603 805
+pottedplant 311 986 543 1079
+chair 645 774 710 833
+car 508 1022 696 1079
+car 124 987 345 1079

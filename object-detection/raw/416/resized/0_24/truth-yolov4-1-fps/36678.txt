@@ -1,0 +1,9 @@
+pottedplant 637 747 704 811
+pottedplant 486 1009 648 1079
+pottedplant 633 500 687 568
+pottedplant 1696 367 1813 444
+pottedplant 802 744 850 774
+pottedplant 735 759 772 797
+pottedplant 759 745 804 774
+pottedplant 764 761 807 791
+chair 766 789 820 840

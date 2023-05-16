@@ -17,7 +17,7 @@ PROTOCOL="tcp"
 PRINT_COUNT=false
 #TRUTHDIR="labelImg/txt"
 #TRUTHDIR="edited-yolov3"
-TRUTHDIR="consistent/416/resized/0_24/truth-yolov3-30-fps"
+TRUTHDIR="consistent/416/resized/0_24/truth-yolov3-1-fps"
 
 RESDIR=$(realpath ~/Documents/DREML-data/simulator/)
 
@@ -43,5 +43,5 @@ print_mAP "adaptive/0/memcopy/uniform"
 print_mAP "adaptive/1/memcopy/uniform"
 print_mAP "adaptive/1/static/uniform"
 print_mAP "adaptive/1/dynamic/uniform"
-print_mAP "adaptive/1/dynamic/minsum"
+#print_mAP "adaptive/1/dynamic/minsum"
 print_mAP "adaptive/1/dynamic/minmax"

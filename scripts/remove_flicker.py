@@ -10,7 +10,7 @@ def loadDets(fn):
     with open(fn,'r') as fh:
         for line in fh:
             data = line.split()
-            print(data)
+            #print(data)
             dets.append({'name':data[0], 'prob':float(data[1]), 'left':int(data[2]), 'top':int(data[3]), 'right':int(data[4]), 'bot':int(data[5])})
     return  dets
 
@@ -89,7 +89,7 @@ if __name__ == "__main__":
             fn = line.split('\n')[0]
             dets = loadDets(path2folder + '/' + fn)
             imIndex = int(fn.split('.txt')[0])
-            with open(fn, 'w') as fh:
+            with open(path2folder + '/' + fn, 'w') as fh:
                 for currDet in dets:
                     if isConsistent(imIndex, path2folder, thresh, currDet, 3):
                         fh.write(currDet['name']+' '+str(currDet['prob'])+' '+str(currDet['left'])+' '+str(currDet['top'])+' '+str(currDet['right'])+' '+str(currDet['bot'])+'\n')

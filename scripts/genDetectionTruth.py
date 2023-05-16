@@ -14,7 +14,7 @@ if len(sys.argv) != 3:
 
 net = sys.argv[1]
 imageList = sys.argv[2]
-assert net in ['yolov2','yolov3','yolov2-tiny','yolov3-tiny']
+assert net in ['yolov2', 'yolov3', 'yolov2-tiny', 'yolov3-tiny', 'yolov4']
 
 threshStr = '0_' + str(thresh).split('.')[-1]
 path2weight = path2home + 'darknet_weights/' + net + '.weights'
