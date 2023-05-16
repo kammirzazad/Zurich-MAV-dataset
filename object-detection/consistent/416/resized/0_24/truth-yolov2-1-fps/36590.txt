@@ -1,3 +1,2 @@
 pottedplant 903 456 992 510
 pottedplant 769 765 840 818
-pottedplant 418 436 460 479

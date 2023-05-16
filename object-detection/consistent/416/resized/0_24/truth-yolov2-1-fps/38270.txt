@@ -1,4 +1,3 @@
 pottedplant 491 336 644 442
 pottedplant 480 347 574 429
-car 197 877 532 1079
 truck 197 877 532 1079

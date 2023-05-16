@@ -1,3 +1,2 @@
 pottedplant 780 348 862 404
-pottedplant 624 356 703 405
 car 1708 670 1919 853
