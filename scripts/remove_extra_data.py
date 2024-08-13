@@ -18,5 +18,5 @@ for file in files:
     if bn not in images:
         # print('removing', bn)
         os.system('rm ' + file)
-    else:
-        print('keeping', bn)
+    #else:
+    #   print('keeping', bn)
