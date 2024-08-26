@@ -2,11 +2,11 @@ import  os
 import  sys
 import  subprocess
 
-fps = 30
+frame_step = 30  # 30fps/1fps
 interval_size = 200
 batch_size = interval_size
 min_index = 32000
-max_index = min_index + (fps * interval_size) #47000
+max_index = min_index + (frame_step * interval_size) #47000
 input_dir = "./mAP/input/detection-results/"
 ground_truth = "./mAP/input/ground-truth/"
 interval_input = "/tmp/det/"
@@ -24,11 +24,11 @@ os.system("mkdir -p " + interval_input)
 os.system("cp " + sys.argv[1] + "/*.txt " + interval_input)
 
 vals = []
-for i in range(min_index, max_index, (fps * batch_size)):
+for i in range(min_index, max_index, (frame_step * batch_size)):
     os.system("rm " + input_dir + "/* " + ground_truth + "/* 2> /dev/null")
 
-    for j in range(i, min(i + (fps * batch_size), max_index), fps):
-        if j < min_index + (queue_size * fps):
+    for j in range(i, min(i + (frame_step * batch_size), max_index), frame_step):
+        if j < min_index + (frame_step * queue_size):
             continue
         os.system("cp " + interval_input + str(j) + ".txt " + input_dir)
         os.system("cp " + interval_truth + str(j) + ".txt " + ground_truth)

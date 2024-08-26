@@ -1,34 +1,62 @@
 #!/bin/bash
 
-if [ "$#" -ne 4 ]; then
-    echo "usage: $0 [latency <1.0] [gridSize] [updateFreq] [layerGroups]"
-    exit 1
-fi
+BASELINE_RATE=50
+BASELINE_SEED=4716771
+BASELINE_TILES=$((3*3))
+BASELINE_QUEUESIZE=5
+BASELINE_LAYERGROUPS=7
 
-LATENCY=$1
-GRIDSIZE=$2
-UPDATEFREQ=$3
-LAYERGROUPS=$4
-SEED="4716771"
-#SEED="12345678"
-#SEED="87654321"
-#SEED="56781234"
-#SEED="43218765"
-PROTOCOL="tcp"
-#RESDIR="../../DREML-data-recent/emulator/IMG_SEG"
 RESDIR="../../DREML-data/simulator/IMG_SEG"
-TRUTHDIR="../Zurich-MAV-dataset/image-segmentation/resized/512/30-fps/"
+TRUTHDIR="../image-segmentation/resized/512/1-fps-200/"
 
-print_coeff () {
-   echo -e -n "$1   \t"
-   DIR=$RESDIR/$GRIDSIZE/$UPDATEFREQ/$LAYERGROUPS/$PROTOCOL/$SEED/$1/$LATENCY/
-   python3 iseg_coeff.py $DIR $TRUTHDIR
+sweep_lat() {
+   SETTING=$1
+   METRIC=$2
+   QUEUESIZE=$3
+   GRIDSIZE=$4
+   UPDATEFREQ=$5
+   LAYERGROUPS=$6
+   SEED=$7
+   declare -a LATS=("0.1" "0.2" "0.3" "0.4" "0.45" "0.5") # "0.55" "0.6") # "0.7" "0.8")
+   echo -e "${SETTING}"
+   for LATENCY in "${LATS[@]}"
+   do
+      echo -e -n "${LATENCY}:\t"
+      DIR="${RESDIR}/${METRIC}/${QUEUESIZE}/${GRIDSIZE}/${UPDATEFREQ}/${LAYERGROUPS}/tcp/${SEED}/${SETTING}/${LATENCY}/"
+      python3 iseg_coeff.py ${DIR} ${TRUTHDIR} ${QUEUESIZE}
+   done
 }
 
-print_coeff "random/0/memcopy/uniform"
-print_coeff "adaptive/0/memcopy/uniform"
-print_coeff "adaptive/1/memcopy/uniform"
-print_coeff "adaptive/1/static/uniform"
-print_coeff "adaptive/1/dynamic/uniform"
-print_coeff "adaptive/1/dynamic/minsum"
-print_coeff "adaptive/1/dynamic/minmax"
+sweep_opts() {
+   GRIDSIZE=$1
+   UPDATEFREQ=$2
+   SEED=$3
+   METRIC=$4
+   QUEUESIZE=$5
+   sweep_lat "random/0/memcopy/uniform"   ${METRIC} ${QUEUESIZE} ${GRIDSIZE} ${UPDATEFREQ} ${BASELINE_LAYERGROUPS} ${SEED}
+   sweep_lat "adaptive/0/memcopy/uniform" ${METRIC} ${QUEUESIZE} ${GRIDSIZE} ${UPDATEFREQ} ${BASELINE_LAYERGROUPS} ${SEED}
+   sweep_lat "adaptive/1/memcopy/uniform" ${METRIC} ${QUEUESIZE} ${GRIDSIZE} ${UPDATEFREQ} ${BASELINE_LAYERGROUPS} ${SEED}
+   sweep_lat "adaptive/1/static/uniform"  ${METRIC} ${QUEUESIZE} ${GRIDSIZE} ${UPDATEFREQ} ${BASELINE_LAYERGROUPS} ${SEED}
+   sweep_lat "adaptive/1/dynamic/uniform" ${METRIC} ${QUEUESIZE} ${GRIDSIZE} ${UPDATEFREQ} ${BASELINE_LAYERGROUPS} ${SEED}
+   sweep_lat "adaptive/1/dynamic/minmax"  ${METRIC} ${QUEUESIZE} ${GRIDSIZE} ${UPDATEFREQ} ${BASELINE_LAYERGROUPS} ${SEED}
+}
+
+# baseline
+echo -e "baseline"
+sweep_opts ${BASELINE_TILES} ${BASELINE_RATE} ${BASELINE_SEED} der_and_stdev ${BASELINE_QUEUESIZE}
+
+# frequency_100
+echo -e "frequency_100  "
+sweep_opts ${BASELINE_TILES} 100 ${BASELINE_SEED} der_and_stdev ${BASELINE_QUEUESIZE}
+
+# frequency_25
+echo -e "frequency_25  "
+sweep_opts ${BASELINE_TILES} 25  ${BASELINE_SEED} der_and_stdev ${BASELINE_QUEUESIZE}
+
+# queue_2
+echo -e "queue_2  "
+sweep_opts ${BASELINE_TILES} ${BASELINE_RATE} ${BASELINE_SEED} der_and_stdev 2
+
+# queue_10
+echo -e "queue_10  "
+sweep_opts ${BASELINE_TILES} ${BASELINE_RATE} ${BASELINE_SEED} der_and_stdev 10
