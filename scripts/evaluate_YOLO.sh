@@ -6,7 +6,10 @@ if [ "$#" -ne 1 ]; then
 fi
 
 NET=$1
-DEFAULT_SEED=4716771
+BASELINE_RATE=50
+BASELINE_SEED=4716771
+BASELINE_TILES=$((3*3))
+BASELINE_QUEUESIZE=5
 
 if [ "$NET" = "YOLOv2" ]; then
    LAYERGROUPS=2
@@ -33,46 +36,55 @@ sweep_lat() {
    done
 }
 
-echo -e "queue10 (q_10,rate_50,tile_3_3)  "
-sweep_lat 0 9 50 ${DEFAULT_SEED} der_and_stdev 10
-exit 1
+#echo -e "tile_4_2 (q_5,rate_50,tile_4_2)  "
+#sweep_lat 0 8 ${BASELINE_RATE} ${BASELINE_SEED} der_and_stdev ${BASELINE_QUEUESIZE}
+#exit 1
 
 # tiles_3_2
-echo -e "tile_3_2  "
-sweep_lat 1 6 50 ${DEFAULT_SEED} der_and_stdev 5
+#echo -e "tile_3_2  "
+#sweep_lat 1 6 ${BASELINE_RATE} ${BASELINE_SEED} der_and_stdev ${BASELINE_QUEUESIZE}
 
 # tiles_4_2
-echo -e "tile_4_2  "
-sweep_lat 1 8 50 ${DEFAULT_SEED} der_and_stdev 5
+#echo -e "tile_4_2  "
+#sweep_lat 1 8 ${BASELINE_RATE} ${DEFAULT_SEED} der_and_stdev ${BASELINE_QUEUESIZE}
 
 # seed_B
-echo -e "seed_B  "
-sweep_lat 1 9 50 12345678 der_and_stdev 5
+#echo -e "seed_B  "
+#sweep_lat 1 ${BASELINE_TILES} ${BASELINE_RATE} 12345678 der_and_stdev ${BASELINE_QUEUESIZE}
 
 # seed_C
-echo -e "seed_C  "
-sweep_lat 1 9 50 87654321 der_and_stdev 5
+#echo -e "seed_C  "
+#sweep_lat 1 ${BASELINE_TILES} ${BASELINE_RATE} 87654321 der_and_stdev ${BASELINE_QUEUESIZE}
 
 # seed_D
-echo -e "seed_D  "
-sweep_lat 1 9 50 56781234 der_and_stdev 5
+#echo -e "seed_D  "
+#sweep_lat 1 ${BASELINE_TILES} ${BASELINE_RATE} 56781234 der_and_stdev ${BASELINE_QUEUESIZE}
 
 # seed_E
-echo -e "seed_E  "
-sweep_lat 1 9 50 43218765 der_and_stdev 5
+#echo -e "seed_E  "
+#sweep_lat 1 ${BASELINE_TILES} ${BASELINE_RATE} 43218765 der_and_stdev ${BASELINE_QUEUESIZE}
 
 # baseline
 echo -e "baseline  "
-sweep_lat 0 9 50 ${DEFAULT_SEED} der_and_stdev 5
+sweep_lat 0 ${BASELINE_TILES} ${BASELINE_RATE} ${BASELINE_SEED} der_and_stdev ${BASELINE_QUEUESIZE}
 
 # stdev
-echo -e "stdev  "
-sweep_lat 0 9 50 ${DEFAULT_SEED} stdev 5
+#echo -e "stdev  "
+#sweep_lat 0 ${BASELINE_TILES} ${BASELINE_RATE} ${BASELINE_SEED} stdev ${BASELINE_QUEUESIZE}
 
 # frequency_100
 echo -e "frequency_100  "
-sweep_lat 0 9 100 ${DEFAULT_SEED} der_and_stdev 5
+sweep_lat 0 ${BASELINE_TILES} 100 ${BASELINE_SEED} der_and_stdev ${BASELINE_QUEUESIZE}
 
 # frequency_25
 echo -e "frequency_25  "
-sweep_lat 0 9 25 ${DEFAULT_SEED} der_and_stdev 5
+sweep_lat 0 ${BASELINE_TILES} 25  ${BASELINE_SEED} der_and_stdev ${BASELINE_QUEUESIZE}
+
+# queue_2
+echo -e "queue_2  "
+sweep_lat 0 ${BASELINE_TILES} ${BASELINE_RATE} ${BASELINE_SEED} der_and_stdev 2
+
+# queue_10
+echo -e "queue_10  "
+sweep_lat 0 ${BASELINE_TILES} ${BASELINE_RATE} ${BASELINE_SEED} der_and_stdev 10
+
